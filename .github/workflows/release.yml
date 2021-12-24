@@ -1,0 +1,11 @@
+name: release
+on:
+  workflow_dispatch:
+jobs:
+  release:
+  steps:
+    - run: |
+        echo test > asset
+        gh release upload v0.0.0 asset
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
